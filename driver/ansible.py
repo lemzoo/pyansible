@@ -134,8 +134,10 @@ class Driver:
 				f'in the working dir `{self._base_plays_path}`'
 			raise AnsiblePlaybookNotFoundError(error)
 
-		self._prepare_for_run(host=host, extra_vars=extra_vars,
-							  playbook=full_playbook_path)
+		self._prepare_for_run(
+			host=host, extra_vars=extra_vars,
+		    playbook=full_playbook_path)
+
 		result_code = self.play_executor.run()
 		# TODO : If you want: _status contains
 		# the execution summary per host of playbook
@@ -148,9 +150,10 @@ class Driver:
 	def _prepare_for_run(self, host, extra_vars, playbook):
 		module_path = f'{self._base_plays_path}/modules'
 
-		options = InventoryOptions(remote_user=self._remote_user,
-								   private_key_file=self._private_key_file,
-								   module_path=module_path)
+		options = InventoryOptions(
+			remote_user=self._remote_user,
+			private_key_file=self._private_key_file,
+			module_path=module_path)
 
 		loader = DataLoader()
 		loader.set_vault_secrets(self._default_secret)
