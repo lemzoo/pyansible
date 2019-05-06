@@ -18,7 +18,7 @@ Getting started:
 
 First create a playbook with this name and this content:
 
-filename: my-playbook.yml and below the content of the playbook
+filename: `my-playbook.yml` and below the content of the playbook
 
 ```
     ---
@@ -41,8 +41,8 @@ filename: my-playbook.yml and below the content of the playbook
             'ANSIBLE_VAULT_PASSWORD': 'my-vaul-password-to-devault-files',
         }
         
-    >>> from ansible_driver import Driver as AnsibleDriver
-    >>> driver = AnsibleDriver(config=configuration)
+    >>> from pyyansible import Driver
+    >>> driver = Driver(config=configuration)
     >>> playbook = 'my-playbook.yml'
     >>> host = 'remote-server'
     >>> extra_vars = {'key': 'value', 'number': 1}
