@@ -4,8 +4,7 @@ import os
 
 import pytest
 
-from pyansible.ansible import Driver as AnsibleDriver
-from pyansible.ansible import AnsiblePlaybookNotFoundError
+from pyansible import AnsibleDriver, AnsiblePlaybookNotFoundError
 
 
 class TestDriver:
