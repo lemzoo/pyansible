@@ -7,7 +7,7 @@ from pyansible import AnsibleDriver
 remote_user = getpass.getuser()
 private_key_file = ''
 chdir = os.getcwd()
-working_dir = f'{chdir}/tests'
+working_dir = f'{chdir}/examples'
 verbosity = 0
 vault_password = ''
 configuration = {
@@ -23,6 +23,6 @@ playbook = 'list.yml'
 host = 'localhost'
 extra_vars = {'key': 'value', 'number': 1}
 
-result = driver.run(playbook_path, host, extra_vars)
+result = driver.run(playbook, host, extra_vars)
 assert result[0] == 0  # This is the result code
 assert result[1] == 'RUN_OK'  # additional info
