@@ -1,0 +1,27 @@
+# 
+.pytest_cache/
+.coverage
+
+# __pyc__ file
+__pycache__/
+tests/__pycache__/
+
+# virtualenv
+venv/
+
+# IDE Generated files
+.idea
+.idea/*
+.idea/**/contentModel.xml
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
