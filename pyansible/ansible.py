@@ -63,15 +63,19 @@ class Display(AnsibleDisplay):
 		super().__init__(verbosity)
 		self.log_storage = []
 
-	def display(self, msg, color=None, stderr=False, screen_only=False, log_only=False):
-		print(f'display method was called with these args: msg={msg}, color={color}',
-			  f'stderr={stderr}, screen_only={screen_only}, log_only={log_only}')
+	def display(self, msg, color=None, stderr=False,
+				screen_only=False, log_only=False):
+		print(f'display method was called with these args: msg={msg},'
+			  f'color={color}, stderr={stderr}, screen_only={screen_only},'
+			  f'log_only={log_only}')
+
 		msg2 = to_bytes(msg, encoding=self._output_encoding(stderr=stderr))
 		if sys.version_info >= (3,):
 			# Convert back to text string on python3
 			# We first convert to a byte string so that we get rid of
 			# characters that are invalid in the user's locale
-			msg2 = to_text(msg2, self._output_encoding(stderr=stderr), errors='replace')
+			encoded_output = self._output_encoding(stderr=stderr)
+			msg2 = to_text(msg2, encoded_output, errors='replace')
 
 		self.log_storage.append(msg2)
 
@@ -102,7 +106,7 @@ class LogCallBack(CallbackModule):
 
 class Driver:
 	"""
-	Python basic driver which executes ansible plays
+	Python basic pyansible which executes ansible plays
 
 	In order to use the drivers, a configuration should be provided
 	during instantiation of the object. This configuration should contain:

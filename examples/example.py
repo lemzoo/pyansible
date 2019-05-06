@@ -1,7 +1,7 @@
 import getpass
 import os
 
-from driver.ansible import Driver as AnsibleDriver
+from pyansible.ansible import Driver as AnsibleDriver
 
 
 remote_user = getpass.getuser()
