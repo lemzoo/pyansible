@@ -21,7 +21,7 @@ configuration = {
 driver = AnsibleDriver(config=configuration)
 playbook = 'list.yml'
 host = 'localhost'
-extra_vars = {'key': 'value', 'number': 1}
+extra_vars = {'chdir': chdir}
 
 result = driver.run(playbook, host, extra_vars)
 assert result[0] == 0  # This is the result code
