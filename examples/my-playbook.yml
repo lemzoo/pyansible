@@ -1,7 +1,0 @@
----
-- hosts: all
-- gather_fact: no
-
-  tasks:
-    - debug: msg="key=`{{ key }}` and number=`{{ value }}`"
-...

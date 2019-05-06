@@ -1,0 +1,13 @@
+---
+- hosts: all
+
+  tasks:
+    - name: List file with detail for the directory {{ chdir }}
+      shell: ls -irath
+      args:
+        chdir: "{{ chdir }}"
+      register: shell_out
+      delegate_to: localhost
+
+    - debug: msg="{{ shell_ot.stdout }}"
+...
