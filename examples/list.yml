@@ -9,5 +9,5 @@
       register: shell_out
       delegate_to: localhost
 
-    - debug: msg="{{ shell_ot.stdout }}"
+    - debug: msg="{{ shell_out.stdout }}"
 ...
