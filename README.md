@@ -41,8 +41,8 @@ filename: `my-playbook.yml` and below the content of the playbook
             'ANSIBLE_VAULT_PASSWORD': 'my-vaul-password-to-devault-files',
         }
         
-    >>> from pyyansible import Driver
-    >>> driver = Driver(config=configuration)
+    >>> from pyyansible import AnsibleDriver
+    >>> driver = AnsibleDriver(config=configuration)
     >>> playbook = 'my-playbook.yml'
     >>> host = 'remote-server'
     >>> extra_vars = {'key': 'value', 'number': 1}
