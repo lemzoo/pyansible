@@ -31,6 +31,7 @@ filename: `my-playbook.yml` and below the content of the playbook
 
 ```
 
+Open python shell:
 
 ```
     >>> configuration = {
